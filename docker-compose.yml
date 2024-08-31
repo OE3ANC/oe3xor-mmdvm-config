@@ -3,6 +3,8 @@ services:
     image: oe3anc/mmdvmhost
     volumes:
       - mmdvmdata:/app/mmdvm/configs
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
     restart: unless-stopped
 
   filebrowser:
