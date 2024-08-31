@@ -1,8 +1,6 @@
 services:
   mmdvm:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: oe3anc/mmdvmhost
     volumes:
       - mmdvmdata:/app/mmdvm/configs
     restart: unless-stopped
