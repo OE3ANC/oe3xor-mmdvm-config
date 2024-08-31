@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /workdir
+
 # Clone MMDVMHost and gateway services
 git clone https://github.com/g4klx/MMDVMHost.git
 git clone https://github.com/g4klx/YSFClients.git
@@ -13,7 +15,7 @@ cd ..
 # Build YSFClients
 cd YSFClients
 make -j8
-cd ../..
+cd ..
 
 # Build M17Gateway
 cd M17Gateway
@@ -27,8 +29,12 @@ mkdir -p /app/mmdvm/configs
 cp MMDVMHost/MMDVMHost   /app/mmdvm/
 cp YSFClients/YSFGateway /app/mmdvm/
 cp M17Gateway/M17Gateway /app/mmdvm/
+cp M17Gateway/M17Hosts.txt /app/mmdvm/M17Hosts.txt
+cp -r M17Gateway/Audio /app/mmdvm/
 
 # Copy and rename config examples
 cp MMDVMHost/MMDVM.ini       /app/mmdvm/configs/MMDVM.ini.example
 cp YSFClients/YSFGateway.ini /app/mmdvm/configs/YSFGateway.ini.example
 cp M17Gateway/M17Gateway.ini /app/mmdvm/configs/M17Gateway.ini.example
+
+cd / && rm -rf /workdir
