@@ -1,0 +1,21 @@
+services:
+  mmdvm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - mmdvmdata:/app/mmdvm/configs
+    restart: unless-stopped
+
+  filebrowser:
+    image: filebrowser/filebrowser
+    ports:
+      - "8080:80"
+    volumes:
+      - filebrowser:/data
+      - mmdvmdata:/srv
+    restart: unless-stopped
+
+volumes:
+  filebrowser:
+  mmdvmdata:
