@@ -2,7 +2,7 @@ services:
   mmdvm:
     image: oe3anc/mmdvmhost
     volumes:
-      - mmdvmdata:/app/mmdvm/configs
+      - mmdvmdata:/app/mmdvm/
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
     restart: unless-stopped
@@ -12,7 +12,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - filebrowser:/data
+      - filebrowser:/database.db
       - mmdvmdata:/srv
     restart: unless-stopped
 

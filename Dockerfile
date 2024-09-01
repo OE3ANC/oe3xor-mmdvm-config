@@ -10,7 +10,6 @@ ADD ./run.sh /app/run.sh
 RUN chmod u+x /workdir/build.sh
 RUN chmod u+x /app/run.sh
 
-
-RUN ls -hal /workdir/build.sh && /workdir/build.sh
+RUN cd /workdir/ && /workdir/build.sh
 
 ENTRYPOINT /app/run.sh
