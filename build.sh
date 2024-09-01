@@ -24,6 +24,7 @@ cd ..
 
 # Create directories
 mkdir -p /app/mmdvm/configs
+mkdir -p /app/mmdvm/logs
 
 # Copy binaries
 cp MMDVMHost/MMDVMHost   /app/mmdvm/
@@ -32,7 +33,7 @@ cp M17Gateway/M17Gateway /app/mmdvm/
 cp M17Gateway/M17Hosts.txt /app/mmdvm/M17Hosts.txt
 cp -r M17Gateway/Audio /app/mmdvm/
 
-# Copy and rename config examples
+# Copy and rename config examples -> TODO replace log dirs
 cp MMDVMHost/MMDVM.ini       /app/mmdvm/configs/MMDVM.ini.example
 cp YSFClients/YSFGateway.ini /app/mmdvm/configs/YSFGateway.ini.example
 cp M17Gateway/M17Gateway.ini /app/mmdvm/configs/M17Gateway.ini.example
