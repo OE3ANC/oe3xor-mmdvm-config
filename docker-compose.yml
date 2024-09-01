@@ -1,6 +1,6 @@
 services:
   mmdvm:
-    image: oe3anc/mmdvmhost
+    image: ghcr.io/oe3anc/mmdvmhost:main
     volumes:
       - mmdvmdata:/app/mmdvm/
     devices:
