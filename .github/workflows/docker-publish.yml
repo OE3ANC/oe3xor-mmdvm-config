@@ -9,7 +9,7 @@ on:
   schedule:
     - cron: "27 6 * * *"
   push:
-    tags: ["v*.*.*"]
+    tags: ["*.*.*"]
 
 env:
   # Use docker.io for Docker Hub if empty
