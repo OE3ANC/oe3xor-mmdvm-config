@@ -8,12 +8,11 @@ services:
     restart: unless-stopped
 
   filebrowser:
-    image: filebrowser/filebrowser
+    image: tinyfilemanager/tinyfilemanager:master
     ports:
       - "8080:80"
     volumes:
-      - ./database.db:/database.db
-      - mmdvmdata:/srv
+      - mmdvmdata:/var/www/html/data
     restart: unless-stopped
 
 volumes:
