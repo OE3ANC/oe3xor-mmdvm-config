@@ -12,7 +12,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - filebrowser:/database.db
+      - ./database.db:/database.db
       - mmdvmdata:/srv
     restart: unless-stopped
 
