@@ -37,4 +37,6 @@ cp MMDVMHost/MMDVM.ini       /app/mmdvm/configs/MMDVM.ini.example
 cp YSFClients/YSFGateway.ini /app/mmdvm/configs/YSFGateway.ini.example
 cp M17Gateway/M17Gateway.ini /app/mmdvm/configs/M17Gateway.ini.example
 
+ls -hal /app/mmdvm
+
 cd / && rm -rf /workdir
