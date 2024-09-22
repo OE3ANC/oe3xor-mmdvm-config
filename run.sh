@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# echo "Downloading M17 Hostlist..."
-# curl 'http://www.dudetronics.com/ar-dns/M17Hosts.txt' 2>/dev/null > /app/mmdvm/M17Hosts.txt
+echo "Loading latest release of xorctl"
+wget -qO- https://github.com/OE3ANC/xorctl/releases/latest/download/xorctl-x86_64-unknown-linux-musl.tar.gz | tar xvz -C /app/mmdvm/
+chmod +x /app/mmdvm/xorctl
 
 echo "Starting supervisord..."
 cd /app
