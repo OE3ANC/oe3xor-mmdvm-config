@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-RUN apt update && apt install -y build-essential git supervisor nlohmann-json3-dev mosquitto-dev libmosquitto-dev
+RUN apt update && apt install -y build-essential git supervisor nlohmann-json3-dev mosquitto-dev libmosquitto-dev libsamplerate0-dev
 
 ADD ./supervisor.conf /app/supervisor.conf
 
