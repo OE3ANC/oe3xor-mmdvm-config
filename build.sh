@@ -27,9 +27,9 @@ mkdir -p /app/mmdvm/configs
 mkdir -p /app/mmdvm/logs
 
 # Copy binaries
-cp MMDVMHost/MMDVMHost   /app/mmdvm/
-cp YSFClients/YSFGateway /app/mmdvm/
-cp M17Gateway/M17Gateway /app/mmdvm/
+cp MMDVMHost/MMDVMHost   /app/
+cp YSFClients/YSFGateway /app/
+cp M17Gateway/M17Gateway /app/
 cp M17Gateway/M17Hosts.txt /app/mmdvm/M17Hosts.txt
 cp -r M17Gateway/Audio /app/mmdvm/
 
