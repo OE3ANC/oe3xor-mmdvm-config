@@ -14,6 +14,7 @@ cd ..
 
 # Build M17Gateway
 cd M17Gateway
+git reset --hard 94b719e2294c762442d1e427bf959b4aeb516996
 make -j8
 cd ..
 
