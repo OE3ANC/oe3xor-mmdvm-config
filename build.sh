@@ -17,6 +17,11 @@ cd M17Gateway
 make -j8
 cd ..
 
+# Build FMGateway
+cd FMGateway
+make -j8
+cd ..
+
 # Create directories
 mkdir -p /app/mmdvm/configs
 mkdir -p /app/mmdvm/logs
@@ -24,7 +29,7 @@ mkdir -p /app/mmdvm/logs
 # Copy binaries
 cp MMDVMHost/MMDVMHost   /app/
 cp M17Gateway/M17Gateway /app/
-cp M17Gateway/FMGateway  /app/
+cp FMGateway/FMGateway  /app/
 
 # cp M17Gateway/M17Hosts.txt /app/mmdvm/M17Hosts.txt
 cp -r M17Gateway/Audio /app/mmdvm/
