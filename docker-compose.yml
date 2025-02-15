@@ -3,6 +3,7 @@ services:
     image: ghcr.io/oe3anc/mmdvmhost:latest
     volumes:
       - mmdvmdata:/app/mmdvm/
+      - /tmp/sql/sqlfile:/tmp/sql
     devices:
       - /dev/ttyUSB0:/dev/ttyUSB0
     restart: unless-stopped
