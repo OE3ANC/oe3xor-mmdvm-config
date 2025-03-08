@@ -21,6 +21,7 @@ cd ..
 
 # Build FMGateway
 cd FMGateway
+sed -i 's/CFLAGS = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H/CFLAGS = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -DHAS_SRC/' Makefile && sed -i 's/LIBS = -lpthread -lutil/LIBS = -lpthread -lutil -lsamplerate/' Makefile
 make -j8
 cd ..
 
