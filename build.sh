@@ -9,6 +9,7 @@ git clone https://github.com/g4klx/FMGateway.git # MQTT branch has a connection 
 
 # Build MMDVMHost
 cd MMDVMHost
+sed -i 's/CFLAGS = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -I\/usr\/local\/include/CFLAGS = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -DHAS_SRC -I\/usr\/local\/include/' Makefile && sed -i 's/LIBS = -lpthread -lutil/LIBS = -lpthread -lutil -lsamplerate/' Makefile
 make -j8
 cd ..
 
