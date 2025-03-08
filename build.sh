@@ -3,8 +3,8 @@
 cd /workdir
 
 # Clone MMDVMHost and gateway services
-git clone -b mqtt https://github.com/g4klx/MMDVMHost.git
-git clone -b mqtt https://github.com/g4klx/M17Gateway.git
+git clone https://github.com/g4klx/MMDVMHost.git
+git clone https://github.com/g4klx/M17Gateway.git
 git clone https://github.com/g4klx/FMGateway.git # MQTT branch has a connection problem
 
 # Build MMDVMHost
