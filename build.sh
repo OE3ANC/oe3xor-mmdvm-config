@@ -5,11 +5,13 @@ cd /workdir
 # Clone MMDVMHost and gateway services
 git clone https://github.com/g4klx/MMDVMHost.git
 git clone https://github.com/g4klx/M17Gateway.git
-git clone https://github.com/g4klx/FMGateway.git # MQTT branch has a connection problem
+git clone https://github.com/g4klx/FMGateway.git
 
 # Build MMDVMHost
 cd MMDVMHost
-sed -i 's/CFLAGS = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -I\/usr\/local\/include/CFLAGS = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -DHAS_SRC -I\/usr\/local\/include/' Makefile && sed -i 's/LIBS = -lpthread -lutil/LIBS = -lpthread -lutil -lsamplerate/' Makefile
+# Enable
+sed -i 's/CFLAGS  = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -I\/usr\/local\/include/CFLAGS  = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -DHAS_SRC -I\/usr\/local\/include/' Makefile && \
+sed -i 's/LIBS    = -lpthread -lutil/LIBS    = -lpthread -lutil -lsamplerate/' Makefile
 make -j8
 cd ..
 
@@ -21,7 +23,8 @@ cd ..
 
 # Build FMGateway
 cd FMGateway
-sed -i 's/CFLAGS = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H/CFLAGS = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -DHAS_SRC/' Makefile && sed -i 's/LIBS = -lpthread -lutil/LIBS = -lpthread -lutil -lsamplerate/' Makefile
+sed -i 's/CFLAGS  = -g -O3 -Wall -pthread/CFLAGS  = -g -O3 -Wall -pthread -DHAS_SRC/' Makefile && \
+sed -i 's/LIBS    = -lpthread -lmd/LIBS    = -lpthread -lmd -lsamplerate/' Makefile
 make -j8
 cd ..
 
@@ -42,6 +45,12 @@ cp MMDVMHost/MMDVM.ini       /app/mmdvm/configs/MMDVM.ini.example
 cp M17Gateway/M17Gateway.ini /app/mmdvm/configs/M17Gateway.ini.example
 cp FMGateway/FMGateway.ini  /app/mmdvm/configs/FMGateway.ini.example
 
+# Install SvxLink soundfiles
+cd /usr/share/svxlink/sounds/
+wget https://github.com/sm0svx/svxlink-sounds-en_US-heather/releases/download/24.02/svxlink-sounds-en_US-heather-16k-24.02.tar.bz2
+tar xvjf svxlink-sounds-en_US-heather-16k-24.02.tar.bz2
+ln -s en_US-heather-16k en_US
+rm /usr/share/svxlink/sounds/svxlink-sounds-en_US-heather-16k-24.02.tar.bz2
 
 ls -hal /app/mmdvm
 
