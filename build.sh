@@ -3,9 +3,9 @@
 cd /workdir
 
 # Clone MMDVMHost and gateway services
-git clone https://github.com/g4klx/MMDVMHost.git
-git clone https://github.com/g4klx/M17Gateway.git
-git clone https://github.com/g4klx/FMGateway.git
+git clone https://github.com/OE3ANC/MMDVMHost.git
+git clone https://github.com/OE3ANC/M17Gateway.git
+git clone https://github.com/OE3ANC/FMGateway.git
 
 # Build MMDVMHost
 cd MMDVMHost
