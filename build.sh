@@ -12,6 +12,7 @@ cd MMDVMHost
 # Enable
 sed -i 's/CFLAGS  = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -I\/usr\/local\/include/CFLAGS  = -g -O3 -Wall -std=c++0x -pthread -DHAVE_LOG_H -DHAS_SRC -I\/usr\/local\/include/' Makefile && \
 sed -i 's/LIBS    = -lpthread -lutil/LIBS    = -lpthread -lutil -lsamplerate/' Makefile
+cat Makefile
 make -j8
 cd ..
 
@@ -25,6 +26,7 @@ cd ..
 cd FMGateway
 sed -i 's/CFLAGS  = -g -O3 -Wall -pthread/CFLAGS  = -g -O3 -Wall -pthread -DHAS_SRC/' Makefile && \
 sed -i 's/LIBS    = -lpthread -lmd/LIBS    = -lpthread -lmd -lsamplerate/' Makefile
+cat Makefile
 make -j8
 cd ..
 
